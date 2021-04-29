@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap');
+
+@mixin checkers($size: 40px, $contrast: 0.07) {
+  $checkerColor: rgba(#000, $contrast);
+  $angle: 45deg;
+  $tp: 25%;
+  background-image: linear-gradient($angle, $checkerColor $tp, transparent $tp),
+    linear-gradient(-$angle, $checkerColor $tp, transparent $tp),
+    linear-gradient($angle, transparent 3 * $tp, $checkerColor 3 * $tp),
+    linear-gradient(-$angle, transparent 3 * $tp, $checkerColor 3 * $tp);
+  background-size: $size $size;
+  background-position: 0 0, 0 $size/2, $size/2 -1 * $size/2, -1 * $size/2 0;
+}
+
+html,
+body {
+  color: #fafafa;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  @include checkers(5px, 0.4);
+  background-color: #2b2b2b54;
+  font-family: 'Open Sans', sans-serif;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+
