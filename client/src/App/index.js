@@ -93,6 +93,8 @@ function setEffects(background, effects) {
           passes: 1,
         });
         break;
+      default:
+        break;
     }
   }
 }
@@ -160,26 +162,15 @@ function setParticles(background) {
   );
 }
 
-function getEffectTypeString(effectType) {
-  switch (effectType) {
-    case EffectType.RgbShift:
-      return "RGB Shift";
-    case EffectType.MotionBlur:
-      return "Motion Blur";
-    case EffectType.VignetteBlur:
-      return "Vignette Blur";
-    default:
-      return effectType;
-  }
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.canvas = React.createRef();
     this.state = {
+      step: 0,
       title: "HELLO WORLD",
-      index: 2,
+      index: 0,
+      textOneIndex: 0,
       transition: TransitionType.Glitch,
       effects: [
         EffectType.Bloom,
@@ -188,10 +179,15 @@ class App extends Component {
         EffectType.VignetteBlur,
       ],
     };
+    this.textOne = [
+      "Um script é uma seqüência de instruções, em uma linguagem interpretável pelo sistema,para controle dos objetos e suas respectivas propriedades de animação, textura e comportamento",
+      "A animação procedural utiliza o modelo de linguagem de programação por procedimentos, incluindo a orientação por objetos e não possui uma relação direta com um determinado sistema. As linguagens procedurais são aquelas em que os operadores são executados em uma certa ordem, para atender a uma solicitação ou atualização de dados. A animação procedural consiste basicamente em modelos matemáticos implementados em linguagens de programação para simulação de forças físicas. ",
+      "A animação comportamental ou por comportamento é aquela em que o animador descreve um conjunto de regras para a maneira como um ou mais objetos da cena reagirão com o ambiente. Um exemplo desse tipo é o sistema de partículas quando usado para multidões, bandos ou grupos de animais.",
+    ];
   }
 
   setBackground(texture, transitionType) {
-    const delay = 1.25;
+    const delay = 0;
     this.renderer.setBackground(texture, {
       type: transitionType,
       config: {
@@ -256,22 +252,104 @@ class App extends Component {
   }
 
   render() {
+    const currentStep = this.state.step;
+    let steps;
+    if (currentStep === 0) {
+      steps = (
+        <div className="body center bordered fade-in-top">
+          <h1 className="content-header">Animações com Blender</h1>
+          <p className="content-text">
+            Este trabalho aborda os principais conceitos de animação em
+            Computação Gráfica, tanto as formas de animação quanto animações de
+            personagens em 3D e a parte prática com um passo a passo envolvendo
+            animação com esqueletos em 3D.
+          </p>
+          <div className="center center-row">
+            <button
+              onClick={() => {
+                this.setState({ textOneIndex: 0 });
+              }}
+              className={
+                "btn bordered " +
+                (this.state.textOneIndex === 0 ? "active" : "")
+              }
+            >
+              Animação por Script
+            </button>
+
+            <button
+              onClick={() => {
+                this.setState({ textOneIndex: 1 });
+              }}
+              className={
+                "btn bordered " +
+                (this.state.textOneIndex === 1 ? "active" : "")
+              }
+            >
+              Animação Procedural
+            </button>
+
+            <button
+              onClick={() => {
+                this.setState({ textOneIndex: 2 });
+              }}
+              className={
+                "btn bordered " +
+                (this.state.textOneIndex === 2 ? "active" : "")
+              }
+            >
+              Animação Comportamental
+            </button>
+          </div>
+          {this.textOneIndex}
+          <p className="content-text">
+            {this.textOne[this.state.textOneIndex]}
+          </p>
+        </div>
+      );
+    } else if (currentStep === 1) {
+      steps = <div className="body center bordered fade-in-top"></div>;
+    }
+
     return (
       <div className="view">
         <canvas ref={this.canvas} className="canvas"></canvas>
         <div className="view center">
-          <h1 className='content-header'>Animações com Blender</h1>
-          <p className="content-text">
-          Este trabalho aborda os principais conceitos de animação em Computação Gráfica, 
-          tanto as formas de animação quanto animações de personagens em 3D e a parte prática 
-          com um passo a passo envolvendo animação com esqueletos em 3D.
-          </p>
-          <div>
-            <button className='btn'>btn 1</button>
-
-            <button className='btn'>btn 2</button>
-
-            <button className='btn'>btn 3</button>
+          {steps}
+          <div className="center center-row fade-in-top">
+            <button
+              className="btn btn-round btn-reverse"
+              onClick={() => {
+                const { images } = this.props;
+                this.setState({ index: 0, step: 0 });
+                const { index, transition } = this.state;
+                this.setBackground(images[index].image, transition);
+              }}
+            >
+              Sobre o projeto
+            </button>
+            <button
+              className="btn btn-round btn-reverse"
+              onClick={() => {
+                const { images } = this.props;
+                this.setState({ index: 1, step: 1 });
+                const { index, transition } = this.state;
+                this.setBackground(images[index].image, transition);
+              }}
+            >
+              Pratica
+            </button>
+            <button
+              className="btn btn-round btn-reverse"
+              onClick={() => {
+                const { images } = this.props;
+                this.setState({ index: 2 });
+                const { index, transition } = this.state;
+                this.setBackground(images[index].image, transition);
+              }}
+            >
+              Integrantes e Detalhes
+            </button>
           </div>
         </div>
       </div>

@@ -27,24 +27,44 @@
 
   &-header {
     font-size: 32px;
+    margin-top: 5rem;
   }
   &-text {
-    width: 50%;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 13px;
+    background-color: #2b2b2b67;
+    box-sizing: border-box;
     text-align: center;
     font-family: "Noto Sans JP", sans-serif;
   }
 }
 
 .btn {
-  width: 9rem;
-  height: 2.5rem;
+  width: 10.5rem;
+  height: 3rem;
   margin: 1rem;
-  border-radius: 20px;
-  background-color: #fafafa;
+  background-color: #2b2b2bf5;
   outline: none;
   border: none;
-  color: #2b2b2b;
+  color: #fafafa;
   cursor: pointer;
+  &-round {
+    border-radius: 20px;
+  }
+  &-reverse {
+    background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #2b2b2b;
+    font-size: 12px;
+  }
 }
 
 .center {
@@ -52,6 +72,26 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &-row {
+    flex-direction: row;
+  }
+}
+
+.body {
+  width: 50rem;
+  background-color: #2b2b2b80;
+  transition: height 1s;
+}
+
+.active {
+  background-color: #fafafa;
+  color: #2b2b2b;
+}
+
+.bordered {
+  border-image-source: url("http://i.stack.imgur.com/s2CAw.png");
+  border-image-slice: 1;
+  border-image-width: 5px;
 }
 
 .fade-in-top {
