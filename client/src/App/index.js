@@ -262,22 +262,9 @@ class App extends Component {
         <div className="view center">
           <h1 className='content-header'>Animações com Blender</h1>
           <p className="content-text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            quo, laborum ipsa, reiciendis iusto iure magni illo cum, dolor
-            reprehenderit inventore itaque totam delectus unde voluptatum
-            suscipit tempora aliquam ex. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit.
-          </p>
-          <p className="content-text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            quo, laborum ipsa, reiciendis iusto iure magni illo cum, dolor
-            reprehenderit inventore itaque totam delectus unde voluptatum
-            suscipit tempora aliquam ex. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            quo, laborum ipsa, reiciendis iusto iure magni illo cum, dolor
-            reprehenderit inventore itaque totam delectus unde voluptatum
-            suscipit tempora aliquam ex. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit.
+          Este trabalho aborda os principais conceitos de animação em Computação Gráfica, 
+          tanto as formas de animação quanto animações de personagens em 3D e a parte prática 
+          com um passo a passo envolvendo animação com esqueletos em 3D.
           </p>
           <div>
             <button className='btn'>btn 1</button>
