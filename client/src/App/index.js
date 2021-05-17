@@ -9,7 +9,7 @@ import {
 } from "midori-bg";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page, pdfjs } from "react-pdf";
 //import ReactDOM from "react-dom";
 import "./style.scss";
 
@@ -193,6 +193,7 @@ class App extends Component {
     this.onDocumentLoadSuccess = ({ numPages }) => {
       this.setState({ numPages: numPages });
     };
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   }
 
   setBackground(texture, transitionType) {
