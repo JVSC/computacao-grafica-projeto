@@ -14,7 +14,6 @@ import { Document, Page, pdfjs } from "react-pdf";
 import ReactPlayer from "react-player";
 import Avatar from "@material-ui/core/Avatar";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
-//import ReactDOM from "react-dom";
 import "./style.scss";
 
 function getTransitionConfig(type) {
@@ -187,6 +186,7 @@ class App extends Component {
         EffectType.Vignette,
         EffectType.VignetteBlur,
       ],
+      modal: false,
     };
     this.textOne = [
       "Um script é uma seqüência de instruções, em uma linguagem interpretável pelo sistema,para controle dos objetos e suas respectivas propriedades de animação, textura e comportamento",
@@ -315,7 +315,6 @@ class App extends Component {
               Animação Comportamental
             </button>
           </div>
-          {this.textOneIndex}
           <p className="content-text">
             {this.textOne[this.state.textOneIndex]}
           </p>
@@ -359,13 +358,44 @@ class App extends Component {
       );
     } else if (currentStep === 2) {
       steps = (
-        <div className="videoPlayer">
+        <div className="videoPlayer center">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=dHaVKtLGNiE"
             width={"775px"}
             height={"550px"}
             controls={true}
           />
+        </div>
+      );
+    } else if (currentStep === 3) {
+      steps = (
+        <div className="center">
+          <h2>Instalando o Blender (2.92.0)</h2>
+          <p>
+            A seguir estão os requisitos do sistema para instalar o Blender:
+            <ol>
+              <li>
+                O programa requer um mínimo de CPU dual-core de 32 bits que seja
+                2 GHz com suporte SSE2, e uma CPU quad-core de 64 bits é
+                recomendada principalmente
+              </li>
+              <li>O software requer pelo menos 2 GB de RAM.</li>
+              <li>É aconselhável usar uma RAM de cerca de 8 GB.</li>
+              <li>
+                Uma tela de 1280 x 768 pixels é o requisito mínimo com um
+                processo de cores de 24 bits.
+              </li>
+              <li>
+                Um pacote redistribuível do Visual C ++ 2013 também é necessário
+                para instalar o Blender.big
+              </li>
+            </ol>
+          </p>
+          <p>
+            Agora basta acessar o link{" "}
+            <a href="https://www.blender.org/download/" target="_blank">do site oficial</a> para
+            selecionar o sistema operacional de destino realizar o download de acordo com seu gerenciador de pacote.
+          </p>
         </div>
       );
     }
@@ -375,40 +405,59 @@ class App extends Component {
         <canvas ref={this.canvas} className="canvas"></canvas>
         <div className="view center">
           {steps}
-          <div className="center center-row fade-in-top">
-            <button
-              className="btn btn-round btn-reverse"
+          <div className="group center center-row fade-in-top">
+            <Button
               onClick={() => {
                 const { images } = this.props;
                 this.setState({ index: 0, step: 0 });
                 const { index, transition } = this.state;
                 this.setBackground(images[index].image, transition);
               }}
+              size="medium"
+              variant="outlined"
+              color="secondary"
             >
-              Sobre o projeto
-            </button>
-            <button
-              className="btn btn-round btn-reverse"
+              Projeto
+            </Button>
+
+            <Button
               onClick={() => {
                 const { images } = this.props;
                 this.setState({ index: 1, step: 1 });
                 const { index, transition } = this.state;
                 this.setBackground(images[index].image, transition);
               }}
+              variant="outlined"
+              color="secondary"
             >
               Apresentação
-            </button>
-            <button
-              className="btn btn-round btn-reverse"
+            </Button>
+
+            <Button
               onClick={() => {
                 const { images } = this.props;
                 this.setState({ index: 2, step: 2 });
                 const { index, transition } = this.state;
                 this.setBackground(images[index].image, transition);
               }}
+              variant="outlined"
+              color="secondary"
             >
               Tutorial
-            </button>
+            </Button>
+
+            <Button
+              onClick={() => {
+                const { images } = this.props;
+                this.setState({ index: 1, step: 3 });
+                const { index, transition } = this.state;
+                this.setBackground(images[index].image, transition);
+              }}
+              variant="outlined"
+              color="secondary"
+            >
+              Instalação
+            </Button>
           </div>
           <AvatarGroup max={4}>
             <Tooltip title="Joao Victor dos Santos Clementino" arrow>

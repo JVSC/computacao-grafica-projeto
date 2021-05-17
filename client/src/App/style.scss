@@ -140,9 +140,22 @@ background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, 
 }
 
 .videoPlayer {
+  position: relative;
   padding: 1rem;
   margin: 1rem;
   background-color: #2b2b2b7e;
   border-radius: 10px;
   border: 1px solid #2b2b2b;
+}
+
+.group{
+  margin: 1rem;
+
+  button{
+    margin: 0.5rem;
+  }
+}
+
+a {
+  color: greenyellow
 }
