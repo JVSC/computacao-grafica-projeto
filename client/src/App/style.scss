@@ -129,3 +129,12 @@ background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, 
     opacity: 1;
   }
 }
+
+
+.maxPdf {
+  width: 700px;
+  height: 575px;
+  text-align: center;
+  line-height: 575px;
+  overflow: hidden;
+}

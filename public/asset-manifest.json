@@ -1,25 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.07e947b2.chunk.css",
-    "main.js": "/static/js/main.5feb82bd.chunk.js",
-    "main.js.map": "/static/js/main.5feb82bd.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6d6a9e08.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6d6a9e08.js.map",
-    "static/js/2.3cedbb57.chunk.js": "/static/js/2.3cedbb57.chunk.js",
-    "static/js/2.3cedbb57.chunk.js.map": "/static/js/2.3cedbb57.chunk.js.map",
-    "static/js/3.13042a58.chunk.js": "/static/js/3.13042a58.chunk.js",
-    "static/js/3.13042a58.chunk.js.map": "/static/js/3.13042a58.chunk.js.map",
+    "main.css": "/static/css/main.e39a6e42.chunk.css",
+    "main.js": "/static/js/main.f2dfd317.chunk.js",
+    "main.js.map": "/static/js/main.f2dfd317.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f07e82d2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f07e82d2.js.map",
+    "static/css/2.86a5f087.chunk.css": "/static/css/2.86a5f087.chunk.css",
+    "static/js/2.6af82283.chunk.js": "/static/js/2.6af82283.chunk.js",
+    "static/js/2.6af82283.chunk.js.map": "/static/js/2.6af82283.chunk.js.map",
+    "static/js/3.e44b6062.chunk.js": "/static/js/3.e44b6062.chunk.js",
+    "static/js/3.e44b6062.chunk.js.map": "/static/js/3.e44b6062.chunk.js.map",
+    "b52755578727eddc5d0b40b77d41298d.js": "/b52755578727eddc5d0b40b77d41298d.js",
+    "b52755578727eddc5d0b40b77d41298d.js.LICENSE.txt": "/b52755578727eddc5d0b40b77d41298d.js.LICENSE.txt",
     "index.html": "/index.html",
-    "static/css/main.07e947b2.chunk.css.map": "/static/css/main.07e947b2.chunk.css.map",
-    "static/js/2.3cedbb57.chunk.js.LICENSE.txt": "/static/js/2.3cedbb57.chunk.js.LICENSE.txt",
+    "static/css/2.86a5f087.chunk.css.map": "/static/css/2.86a5f087.chunk.css.map",
+    "static/css/main.e39a6e42.chunk.css.map": "/static/css/main.e39a6e42.chunk.css.map",
+    "static/js/2.6af82283.chunk.js.LICENSE.txt": "/static/js/2.6af82283.chunk.js.LICENSE.txt",
     "static/media/0.60748a42.jpg": "/static/media/0.60748a42.jpg",
     "static/media/1.827e1e7b.jpg": "/static/media/1.827e1e7b.jpg",
-    "static/media/2.ba88925d.jpg": "/static/media/2.ba88925d.jpg"
+    "static/media/2.ba88925d.jpg": "/static/media/2.ba88925d.jpg",
+    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.6d6a9e08.js",
-    "static/js/2.3cedbb57.chunk.js",
-    "static/css/main.07e947b2.chunk.css",
-    "static/js/main.5feb82bd.chunk.js"
+    "static/js/runtime-main.f07e82d2.js",
+    "static/css/2.86a5f087.chunk.css",
+    "static/js/2.6af82283.chunk.js",
+    "static/css/main.e39a6e42.chunk.css",
+    "static/js/main.f2dfd317.chunk.js"
   ]
 }

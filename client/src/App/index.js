@@ -7,7 +7,9 @@ import {
   WipeDirection,
   SlideDirection,
 } from "midori-bg";
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from "@material-ui/core/Button";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 //import ReactDOM from "react-dom";
 import "./style.scss";
 
@@ -173,6 +175,8 @@ class App extends Component {
       index: 0,
       textOneIndex: 0,
       transition: TransitionType.Glitch,
+      numPages: 0,
+      pageNumber: 1,
       effects: [
         EffectType.Bloom,
         EffectType.MotionBlur,
@@ -185,6 +189,10 @@ class App extends Component {
       "A animação procedural utiliza o modelo de linguagem de programação por procedimentos, incluindo a orientação por objetos e não possui uma relação direta com um determinado sistema. As linguagens procedurais são aquelas em que os operadores são executados em uma certa ordem, para atender a uma solicitação ou atualização de dados. A animação procedural consiste basicamente em modelos matemáticos implementados em linguagens de programação para simulação de forças físicas. ",
       "A animação comportamental ou por comportamento é aquela em que o animador descreve um conjunto de regras para a maneira como um ou mais objetos da cena reagirão com o ambiente. Um exemplo desse tipo é o sistema de partículas quando usado para multidões, bandos ou grupos de animais.",
     ];
+
+    this.onDocumentLoadSuccess = ({ numPages }) => {
+      this.setState({ numPages: numPages });
+    };
   }
 
   setBackground(texture, transitionType) {
@@ -309,7 +317,41 @@ class App extends Component {
         </div>
       );
     } else if (currentStep === 1) {
-      steps = <Document file='http://cg-projeto.herokuapp.com/slides.pdf'></Document>;
+      steps = (
+        <div className="center">
+          <Document
+            file="http://cg-projeto.herokuapp.com/slides.pdf"
+            onLoadSuccess={this.onDocumentLoadSuccess}
+            className="maxPdf fade-in-top"
+          >
+            <Page pageNumber={this.state.pageNumber} width={700} />
+          </Document>
+          <ButtonGroup disableElevation variant="contained" color="primary">
+            <Button
+              onClick={() => {
+                this.setState({
+                  pageNumber: Math.max(1, this.state.pageNumber - 1),
+                });
+              }}
+            >
+              Anterior
+            </Button>
+            <Button>Download</Button>
+            <Button
+              onClick={() => {
+                this.setState({
+                  pageNumber: Math.min(
+                    this.state.numPages,
+                    this.state.pageNumber + 1
+                  ),
+                });
+              }}
+            >
+              Proximo
+            </Button>
+          </ButtonGroup>
+        </div>
+      );
     }
 
     return (
@@ -338,7 +380,7 @@ class App extends Component {
                 this.setBackground(images[index].image, transition);
               }}
             >
-              Pratica
+              Apresentação
             </button>
             <button
               className="btn btn-round btn-reverse"
@@ -349,7 +391,7 @@ class App extends Component {
                 this.setBackground(images[index].image, transition);
               }}
             >
-              Integrantes e Detalhes
+              Tutorial
             </button>
           </div>
         </div>
