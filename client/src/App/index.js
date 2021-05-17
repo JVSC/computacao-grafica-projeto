@@ -321,7 +321,7 @@ class App extends Component {
       steps = (
         <div className="center">
           <Document
-            file="http://cg-projeto.herokuapp.com/slides.pdf"
+            file="//cg-projeto.herokuapp.com/slides.pdf"
             onLoadSuccess={this.onDocumentLoadSuccess}
             className="maxPdf fade-in-top"
           >
