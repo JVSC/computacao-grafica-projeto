@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
+import 'fontsource-roboto';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { loadImage } from "midori-bg";

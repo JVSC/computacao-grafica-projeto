@@ -7,6 +7,7 @@ import {
   WipeDirection,
   SlideDirection,
 } from "midori-bg";
+import { Document } from 'react-pdf'
 //import ReactDOM from "react-dom";
 import "./style.scss";
 
