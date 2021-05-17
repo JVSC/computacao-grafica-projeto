@@ -7,7 +7,7 @@ import {
   WipeDirection,
   SlideDirection,
 } from "midori-bg";
-import { Document } from 'react-pdf'
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 //import ReactDOM from "react-dom";
 import "./style.scss";
 
@@ -309,7 +309,7 @@ class App extends Component {
         </div>
       );
     } else if (currentStep === 1) {
-      steps = <div className="body center bordered fade-in-top"></div>;
+      steps = <Document file='http://cg-projeto.herokuapp.com/slides.pdf'></Document>;
     }
 
     return (
