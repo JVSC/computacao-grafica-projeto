@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.e39a6e42.chunk.css",
-    "main.js": "/static/js/main.45eb5d34.chunk.js",
-    "main.js.map": "/static/js/main.45eb5d34.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f07e82d2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f07e82d2.js.map",
+    "main.css": "/static/css/main.f3367090.chunk.css",
+    "main.js": "/static/js/main.000c8acb.chunk.js",
+    "main.js.map": "/static/js/main.000c8acb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.00481398.js",
+    "runtime-main.js.map": "/static/js/runtime-main.00481398.js.map",
     "static/css/2.86a5f087.chunk.css": "/static/css/2.86a5f087.chunk.css",
-    "static/js/2.b4350c4a.chunk.js": "/static/js/2.b4350c4a.chunk.js",
-    "static/js/2.b4350c4a.chunk.js.map": "/static/js/2.b4350c4a.chunk.js.map",
-    "static/js/3.e44b6062.chunk.js": "/static/js/3.e44b6062.chunk.js",
-    "static/js/3.e44b6062.chunk.js.map": "/static/js/3.e44b6062.chunk.js.map",
+    "static/js/2.2a7584e9.chunk.js": "/static/js/2.2a7584e9.chunk.js",
+    "static/js/2.2a7584e9.chunk.js.map": "/static/js/2.2a7584e9.chunk.js.map",
+    "static/js/3.4674afca.chunk.js": "/static/js/3.4674afca.chunk.js",
+    "static/js/3.4674afca.chunk.js.map": "/static/js/3.4674afca.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.86a5f087.chunk.css.map": "/static/css/2.86a5f087.chunk.css.map",
-    "static/css/main.e39a6e42.chunk.css.map": "/static/css/main.e39a6e42.chunk.css.map",
-    "static/js/2.b4350c4a.chunk.js.LICENSE.txt": "/static/js/2.b4350c4a.chunk.js.LICENSE.txt",
+    "static/css/main.f3367090.chunk.css.map": "/static/css/main.f3367090.chunk.css.map",
+    "static/js/2.2a7584e9.chunk.js.LICENSE.txt": "/static/js/2.2a7584e9.chunk.js.LICENSE.txt",
     "static/media/0.60748a42.jpg": "/static/media/0.60748a42.jpg",
     "static/media/1.827e1e7b.jpg": "/static/media/1.827e1e7b.jpg",
     "static/media/2.ba88925d.jpg": "/static/media/2.ba88925d.jpg",
     "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.f07e82d2.js",
+    "static/js/runtime-main.00481398.js",
     "static/css/2.86a5f087.chunk.css",
-    "static/js/2.b4350c4a.chunk.js",
-    "static/css/main.e39a6e42.chunk.css",
-    "static/js/main.45eb5d34.chunk.js"
+    "static/js/2.2a7584e9.chunk.js",
+    "static/css/main.f3367090.chunk.css",
+    "static/js/main.000c8acb.chunk.js"
   ]
 }

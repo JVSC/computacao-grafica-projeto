@@ -9,7 +9,11 @@ import {
 } from "midori-bg";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
 import { Document, Page, pdfjs } from "react-pdf";
+import ReactPlayer from "react-player";
+import Avatar from "@material-ui/core/Avatar";
+import AvatarGroup from "@material-ui/lab/AvatarGroup";
 //import ReactDOM from "react-dom";
 import "./style.scss";
 
@@ -353,6 +357,17 @@ class App extends Component {
           </ButtonGroup>
         </div>
       );
+    } else if (currentStep === 2) {
+      steps = (
+        <div className="videoPlayer">
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=dHaVKtLGNiE"
+            width={"775px"}
+            height={"550px"}
+            controls={true}
+          />
+        </div>
+      );
     }
 
     return (
@@ -387,7 +402,7 @@ class App extends Component {
               className="btn btn-round btn-reverse"
               onClick={() => {
                 const { images } = this.props;
-                this.setState({ index: 2 });
+                this.setState({ index: 2, step: 2 });
                 const { index, transition } = this.state;
                 this.setBackground(images[index].image, transition);
               }}
@@ -395,6 +410,35 @@ class App extends Component {
               Tutorial
             </button>
           </div>
+          <AvatarGroup max={4}>
+            <Tooltip title="Joao Victor dos Santos Clementino" arrow>
+              <Avatar
+                alt="Joao Victor dos Santos Clementino"
+                src="https://media-exp1.licdn.com/dms/image/C4D03AQH0iBZX2V-8kQ/profile-displayphoto-shrink_200_200/0/1605877659388?e=1626912000&v=beta&t=6kz7okbp-Pfsr6kEXOgiH8PP2SPE6fZBYbesVnKr6D4"
+              />
+            </Tooltip>
+
+            <Tooltip title="Tainara Patrícia de Oliveira" arrow>
+              <Avatar
+                alt="Tainara Patrícia de Oliveira"
+                src="https://media-exp1.licdn.com/dms/image/C4D03AQE49eDRR-KkzA/profile-displayphoto-shrink_800_800/0/1565230681285?e=1626912000&v=beta&t=sMvgLziEXL9CtyKnCprBVZUtRCT6VmkBSN1ihBFdq8I"
+              />
+            </Tooltip>
+
+            <Tooltip title="Thúlio Xavier Milhomens" arrow>
+              <Avatar
+                alt="Thúlio Xavier Milhomens"
+                src="https://scontent.frvd5-1.fna.fbcdn.net/v/t1.6435-9/117299930_348398036321540_5395459781018031327_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeHbT6TwmW39dJ5LLDe9otmU5HaPhSUvbh_kdo-FJS9uH4RBmJbW9HZX5vqdeTwW7X62grELHU4JIoLJC9P1o_7b&_nc_ohc=ObnqbUEsaMsAX-u1NuM&_nc_ht=scontent.frvd5-1.fna&oh=f06f99e70cc98b509d6ef1e8dbce34bf&oe=60C928A5"
+              />
+            </Tooltip>
+
+            <Tooltip title="Laffaiety Melo de Deus" arrow>
+              <Avatar
+                alt="Laffaiety Melo de Deus"
+                src="https://yt3.ggpht.com/ytc/AAUvwnjY31gaWdDpSyskb97i_Iqpah8olOa-Wl0-UZr8=s88-c-k-c0x00ffffff-no-rj"
+              />
+            </Tooltip>
+          </AvatarGroup>
         </div>
       </div>
     );
